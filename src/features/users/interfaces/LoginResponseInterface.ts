@@ -1,4 +1,4 @@
-import { ProductInterface } from "./ProductInterface";
+import { ProductInterface } from "../../general/interfaces/ProductInterface";
 
 export interface LoginResponse {
   loginUser: {

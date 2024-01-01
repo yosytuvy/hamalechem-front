@@ -1,11 +1,11 @@
 import { Box, Grid } from "@mui/material";
-import { Product } from "../../components/Product";
+import { Product } from "../../general/components/Product";
 import { useQuery } from "@apollo/client";
 import { GET_ALL_PRODUCTS } from "../../../apollo/queries/apolloQueries";
 import { Navigation } from "../../layout/components/Navigation";
 import { useEffect, useState } from "react";
-import { AllProductsInterface } from "../../../interfaces/AllProductsInterface";
-import { ProductInterface } from "../../../interfaces/ProductInterface";
+import { AllProductsInterface } from "../../general/interfaces/AllProductsInterface";
+import { ProductInterface } from "../../general/interfaces/ProductInterface";
 
 const RequestsPage = () => {
   const {
