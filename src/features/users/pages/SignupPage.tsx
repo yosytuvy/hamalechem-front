@@ -8,19 +8,19 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { Copyright } from "../../layout/components/Copyright";
 import { RadioGroup, FormControlLabel, Radio, FormLabel } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { To, useNavigate } from "react-router-dom";
-import useSignUp from "./service/useSignup";
+import useSignUp from "../services/useSignup";
 import { SignupInterface } from "../interfaces/SignupInterface";
-import ROUTES from "../../../routers/RouterModel";
+import ROUTES from "../../global/routers/RouterModel";
 import {
   Email_validation,
   FullName_validation,
   Password_validation,
   Roll_validation,
 } from "../helpers/validation";
+import { Copyright } from "../../global/layout/components/Copyright";
 
 export const SignupPage = () => {
   const {
@@ -121,7 +121,9 @@ export const SignupPage = () => {
                 />
               </RadioGroup>
               {errors.userType && (
-                <Typography sx={{color:"red"}}>{errors.userType?.message}</Typography>
+                <Typography sx={{ color: "red" }}>
+                  {errors.userType?.message}
+                </Typography>
               )}
             </Grid>
           </Grid>

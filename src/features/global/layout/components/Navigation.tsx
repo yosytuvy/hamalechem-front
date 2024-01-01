@@ -1,6 +1,6 @@
 import { Stack, Button } from "@mui/material";
-import ROUTES from "../../../routers/RouterModel";
 import { useLocation } from "react-router-dom";
+import ROUTES from "../../routers/RouterModel";
 
 export const Navigation = () => {
   const { pathname } = useLocation();

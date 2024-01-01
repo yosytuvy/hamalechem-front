@@ -11,12 +11,12 @@ import {
   Container,
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import { Copyright } from "../../layout/components/Copyright";
 import { LoginInterface } from "../interfaces/LoginInterface";
 import useLogin from "../services/useLogin";
 import { To, useNavigate } from "react-router-dom";
-import ROUTES from "../../../routers/RouterModel";
+import ROUTES from "../../global/routers/RouterModel";
 import { Email_validation, Password_validation } from "../helpers/validation";
+import { Copyright } from "../../global/layout/components/Copyright";
 
 export default function LoginPage() {
   const {
@@ -31,8 +31,8 @@ export default function LoginPage() {
     loginReq(data)
       .then(() => {
         const details = JSON.parse(localStorage.getItem("User_Details")!);
-        if(details.userType === "solider") navigateTo(ROUTES.donations);
-        if(details.userType === "contributor") navigateTo(ROUTES.requests);
+        if (details.userType === "solider") navigateTo(ROUTES.donations);
+        if (details.userType === "contributor") navigateTo(ROUTES.requests);
       })
       .catch((error) => console.log(error));
   };

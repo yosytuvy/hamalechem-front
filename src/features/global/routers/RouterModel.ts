@@ -3,6 +3,7 @@ const ROUTES = {
     donations: "/donations",
     signup: "/signup",
     login: "/login",
+    requestDetail: "/requestDetails",
 };
 
 export default ROUTES;

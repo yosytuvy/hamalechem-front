@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../../../apollo/queries/apolloQueries";
 import { LoginInterface } from "../interfaces/LoginInterface";
+import { LOGIN_USER } from "../../global/apollo/queries/apolloQueries";
 
 const useLogin = () => {
   const [login] = useMutation(LOGIN_USER);

@@ -1,11 +1,13 @@
 import { Box, Grid } from "@mui/material";
-import { Product } from "../../components/Product";
+import { Product } from "../components/Product";
 import { useQuery } from "@apollo/client";
-import { GET_ALL_PRODUCTS } from "../../../apollo/queries/apolloQueries";
-import { Navigation } from "../../layout/components/Navigation";
 import { useEffect, useState } from "react";
-import { AllProductsInterface } from "../../../interfaces/AllProductsInterface";
-import { ProductInterface } from "../../../interfaces/ProductInterface";
+import { AllProductsInterface } from "../interfaces/AllProductsInterface";
+import { ProductInterface } from "../interfaces/ProductInterface";
+import { GET_ALL_PRODUCTS } from "../../global/apollo/queries/apolloQueries";
+import LoadingPage from "../../global/pages/LoadingPage";
+import ErrorPage from "../../global/pages/ErrorPage";
+import { Navigation } from "../../global/layout/components/Navigation";
 
 const RequestsPage = () => {
   const {
@@ -19,12 +21,11 @@ const RequestsPage = () => {
   useEffect(() => {
     if (allProducts) {
       setRequests(allProducts.allProducts.requests);
-      console.log(requests);
     }
   }, [allProducts]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error</p>;
+  if (loading) return <LoadingPage />;
+  if (error) return <ErrorPage />;
   return (
     <>
       <Navigation />

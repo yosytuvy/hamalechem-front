@@ -1,11 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import { NavBar } from "./features/layout/components/Navbar";
-import Router from "./routers/Router";
+import Router from "./features/global/routers/Router";
 import { ApolloProvider } from "@apollo/client";
-import client from "./apollo/aopllo-client";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import client from "./features/global/apollo/aopllo-client";
+import { NavBar } from "./features/global/layout/components/Navbar";
 
 function App() {
   return (
